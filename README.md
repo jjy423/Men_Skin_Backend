@@ -1,6 +1,7 @@
 연습용 
 
-![image](https://user-images.githubusercontent.com/64140544/126094559-5b993c38-dc01-46f6-a08c-b8f260e7fae0.png)
+![image](https://user-images.githubusercontent.com/64140544/126745457-68c28c4d-16ff-4144-ac1a-8aeb3e2f263d.png)
 
--테이블 컨펌전-
--테이블 컨펌- 수정 예정
+
+2021.07.20  V1
+2021.07.22  V1.1
