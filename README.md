@@ -1,5 +1,5 @@
 DB Schema
-![image](https://user-images.githubusercontent.com/64140544/127019964-bdcb1845-6f3e-45c7-b67e-d90a8b0d1ea6.png)
+![image](https://user-images.githubusercontent.com/64140544/127761939-ab7ad158-3804-47ed-8a86-174915fbcf93.png)
 
 # Men_Skin_Backend
 
