@@ -8,6 +8,9 @@ class User_info(models.Model):
     users_subscription = models.CharField(max_length=30, null=True, verbose_name='사용자 가입경로')
     users_skin_type = models.CharField(max_length=30, null=True, verbose_name='사용자 피부톤')
 
+    class Meta:
+        db_table = 'user_info'
+
 class Board(models.Model):
     board_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('User_info', on_delete=models.CASCADE, db_column='user_id')
@@ -22,12 +25,16 @@ class Board(models.Model):
         return self.board_title
     
     class Meta:
+        db_table = 'board'
         ordering = ["-board_create_at"]
 
-class comment(models.Model):
+class Comment(models.Model):
     comment_int = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('User_info', on_delete=models.CASCADE, db_column='user_id')
     board_id = models.ForeignKey('Board', on_delete=models.CASCADE, db_column='board_id')
     comment_content = models.CharField(100, verbose_name='댓글내용')
     comment_writer = models.CharField(30, verbose_name='댓글 작성자')
     board_create_at = models.DateTimeField(auto_now_add=True , verbose_name='작성 날짜')
+
+    class Meta:
+        db_table = 'comment'
