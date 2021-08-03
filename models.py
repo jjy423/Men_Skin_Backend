@@ -41,3 +41,7 @@ class Comment(models.Model):
     class Meta:
         managed = False
         db_table = 'comment'
+
+class Rank(Models.Model):
+    rank_id = models.AutoField(primary_key=True)
+    
