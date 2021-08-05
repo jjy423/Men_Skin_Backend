@@ -36,9 +36,8 @@ class User(AbstractBaseUser):
         return self.id
 
 
-class board(models.Model):
-    board_id = models.AutoField(primary_key=True) 
-    id = models.ForeignKey(User, on_delete=models.CASCADE, db_column="user_id" ,related_name='board')
+class Board(models.Model):
+    id = models.AutoField(primary_key=True) 
     board_title = models.CharField(max_length=20)
     board_contents = models.TextField()
     board_views = models.IntegerField(default=0)
@@ -54,17 +53,22 @@ class board(models.Model):
         db_table = 'board'
         ordering = ["-board_create_at"]
 
-class comment(models.Model):
-    comment_id = models.AutoField(primary_key=True) 
-    id = models.ForeignKey("User", on_delete=models.CASCADE, db_column="user_id" ,related_name='comment')
-    board_id = models.ForeignKey("Board", on_delete=models.CASCADE, db_column="board_id", related_name='comment')
-    comment_content = models.TextField()
-    comment_writer = models.CharField(max_length=30)
-    board_create_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        managed = False
-        db_table = 'comment'
-
 class Rank(models.Model):
     rank_id = models.AutoField(primary_key=True)
+
+class posted(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=20)
+    contents = models.TextField()
+    views = models.IntegerField(default=0)
+    create_at = models.DateTimeField(auto_now_add=True)
+    type = models.CharField(max_length=30)
+    like = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.board_title
+    
+    class Meta:
+        managed = False
+        db_table = 'post'
+        ordering = ["-create_at"]
