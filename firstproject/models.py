@@ -53,9 +53,6 @@ class Board(models.Model):
         db_table = 'board'
         ordering = ["-board_create_at"]
 
-class Rank(models.Model):
-    rank_id = models.AutoField(primary_key=True)
-
 class posted(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=20)
